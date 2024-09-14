@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchWeather } from '../../store/fetchWeather';
 import { SuggestionItem } from './styled';
+import { useNavigate } from 'react-router';
 
 interface ISuggestionProps {
   label: string;
@@ -10,9 +11,11 @@ interface ISuggestionProps {
 
 const Suggestion: React.FC<ISuggestionProps> = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const onClick = () => {
     dispatch(fetchWeather(props.label.split(',')[0]));
+    navigate('/weatherInfo')
     setTimeout(() => {
       props.hideSuggestionFn();
     }, 400);

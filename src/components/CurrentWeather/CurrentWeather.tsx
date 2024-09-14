@@ -101,7 +101,6 @@ const CurrentWeather: React.FC = () => {
           </InfoRow>
         </CurrentWeatherInfo>
       </CurrentWeatherContainer>
-    {isError ? <p>Cannot load weather for this place</p> : null}
 
     </WeatherContainer>
   );

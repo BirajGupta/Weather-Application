@@ -39,6 +39,7 @@ const initialState: WeatherState = {
   isError: false,
 };
 
+// we will use extraReducer for cohesive reset of state
 const weatherSlice = createSlice({
   name: 'weather',
   initialState,

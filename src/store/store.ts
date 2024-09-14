@@ -9,6 +9,7 @@ const store = configureStore({
   },
 });
 
+// App store maintains the app data and weather data in app and weather reducer resp
 export type AppStore = ReturnType<typeof store.getState>;
 
 export default store;

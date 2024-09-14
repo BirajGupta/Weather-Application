@@ -11,6 +11,7 @@ export const fetchWeather = createAsyncThunk(
     dispatch(setIsLoading(true));
 
     try {
+      // Here we call apis for weatehr info and daily weather forcast
       const res = await Promise.all([fetchWeatherData(city), fetchExtendedForecastData(city)]);
       dispatch(setIsLoading(false));
 
