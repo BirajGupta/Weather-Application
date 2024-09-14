@@ -8,9 +8,10 @@ import { LocationButton, LocationIcon, SearchElement, SearchIcon, SearchInput, S
 import Suggestion from './Suggestion';
 import { useSelector } from 'react-redux';
 import { AppStore } from '../../store/store';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 
 const Search: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const suggestionRef = useRef(null);
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
