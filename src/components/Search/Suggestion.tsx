@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { fetchWeather } from '../../store/fetchWeather';
 import { SuggestionItem } from './styled';
 import { useNavigate } from 'react-router';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 
 interface ISuggestionProps {
   label: string;
@@ -10,7 +11,7 @@ interface ISuggestionProps {
 }
 
 const Suggestion: React.FC<ISuggestionProps> = (props) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const navigate = useNavigate()
 
   const onClick = () => {

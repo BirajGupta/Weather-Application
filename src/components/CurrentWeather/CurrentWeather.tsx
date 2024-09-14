@@ -22,6 +22,7 @@ import {
   WeatherDegree,
 } from './styled';
 import Temperature from './Temperature';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 
 const CurrentWeather: React.FC = () => {
   const { weather, degreeType, isInitial, isError } = useSelector((store: AppStore) => ({
@@ -30,7 +31,7 @@ const CurrentWeather: React.FC = () => {
     isInitial: store.app.isInitial,
     isError: store.weather.isError,
   }));
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 
   useEffect(() => {
     if (isError) {

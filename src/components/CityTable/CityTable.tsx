@@ -8,7 +8,7 @@ import { AppStore } from '../../store/store';
 import InfiniteScrollObserver from '../../hooks/infiniteScrollObserver';
 import { fetchCitiesApi } from '../../api/placeSuggestion';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { ThunkDispatch } from '@reduxjs/toolkit';
 
 const TableContainer: React.FC = () => {
 
@@ -22,7 +22,7 @@ const TableContainer: React.FC = () => {
     loading: state.app.isLoading,
     cities: state.app.cities,
   }));
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
 
 
   const fetchCities = async () => {

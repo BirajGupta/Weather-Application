@@ -6,9 +6,10 @@ import DarkModeToggle from 'react-dark-mode-toggle';
 import { AppStore } from '../../store/store';
 import { toggleDarkMode } from '../../store/reducers/appReducer';
 import { Link } from 'react-router-dom';
+import { ThunkDispatch } from '@reduxjs/toolkit';
 
 const Header: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
   const isDarkMode = useSelector((state: AppStore) => state.app.darkMode);
 
   return (
